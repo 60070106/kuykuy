@@ -34,7 +34,6 @@ class Aerodrome {
     : icao = json["icao"],
       iata = json["iata"],
       timeZone = json["timeZone"];
-
 }
 
 class Aircraft {
@@ -63,4 +62,19 @@ class Aircraft {
         maxZeroFuelWeight = json["maxZeroFuelWeight"],
         maxTakeoffWeight = json["maxTakeoffWeight"],
         maxLandingWeight = json["maxLandingWeight"];
+}
+
+class Waypoint {
+  String name;
+  double latitude;
+  double longitude;
+  double frequency;
+
+  Waypoint();
+
+  Waypoint.fromJSON(Map<String, dynamic> json)
+    : name = json["waypoint"],
+      latitude = json["latitude"],
+      longitude = json["longitude"],
+      frequency = json["frequency"];
 }

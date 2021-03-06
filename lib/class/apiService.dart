@@ -1,6 +1,5 @@
 import 'dart:convert';
 import 'dart:io';
-
 import 'package:http/http.dart' as http;
 import 'package:ofp_flutter/class/constants.dart' as Constants;
 import 'package:ofp_flutter/model/ofp.dart';
