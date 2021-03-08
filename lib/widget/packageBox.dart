@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ofp_flutter/class/constants.dart' as Constants;
-import 'package:ofp_flutter/page/ofp/ofpContainer.dart';
+import 'package:ofp_flutter/page/ofp/ofpPage.dart';
 
 class PackageBox extends StatefulWidget {
   PackageBox({Key key}) : super(key: key);

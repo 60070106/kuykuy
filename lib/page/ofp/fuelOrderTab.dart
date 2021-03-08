@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:ofp_flutter/widget/customAppBar.dart';
 import 'package:ofp_flutter/class/constants.dart' as Constants;
 
-class SettingsTab extends StatefulWidget {
-  SettingsTab({Key key}) : super(key: key);
+class FuelOrderTab extends StatefulWidget {
+  FuelOrderTab({Key key}) : super(key: key);
 
   @override
-  _SettingsTabState createState() => _SettingsTabState();
+  _FuelOrderTabState createState() => _FuelOrderTabState();
 }
 
-class _SettingsTabState extends State<SettingsTab> {
+class _FuelOrderTabState extends State<FuelOrderTab> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -17,15 +16,11 @@ class _SettingsTabState extends State<SettingsTab> {
           color: Colors.black,
           child: Column(
             children: [
-              CustomAppBar(
-                header : "Settings",
-                backButtonEnabled: false,
-              ),
               Expanded(
                 child: Container(
                     color: Constants.BLACK_3,
                     child: Center(
-                      child: Text('Settings'),
+                      child: Text('Fuel Ordering'),
                     )),
               )
             ],

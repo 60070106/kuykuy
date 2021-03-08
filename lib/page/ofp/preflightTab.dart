@@ -2,31 +2,25 @@ import 'package:flutter/material.dart';
 import 'package:ofp_flutter/widget/customAppBar.dart';
 import 'package:ofp_flutter/class/constants.dart' as Constants;
 
-class SettingsTab extends StatefulWidget {
-  SettingsTab({Key key}) : super(key: key);
+class PreflightTab extends StatefulWidget {
+  static const String routeName = "/homepage";
+  PreflightTab({Key key}) : super(key: key);
 
   @override
-  _SettingsTabState createState() => _SettingsTabState();
+  _PreflightTabState createState() => _PreflightTabState();
 }
 
-class _SettingsTabState extends State<SettingsTab> {
+class _PreflightTabState extends State<PreflightTab> {
   @override
   Widget build(BuildContext context) {
     return Container(
           constraints: BoxConstraints.expand(),
-          color: Colors.black,
           child: Column(
             children: [
-              CustomAppBar(
-                header : "Settings",
-                backButtonEnabled: false,
-              ),
               Expanded(
                 child: Container(
                     color: Constants.BLACK_3,
-                    child: Center(
-                      child: Text('Settings'),
-                    )),
+                    child: Center (child: Text('Preflight'),))
               )
             ],
           ),

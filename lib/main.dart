@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:ofp_flutter/page/download/downloadPage.dart';
 import 'package:ofp_flutter/page/main/mainPage.dart';
-import 'package:ofp_flutter/page/ofp/ofpContainer.dart';
+import 'package:ofp_flutter/page/ofp/ofpPage.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:ofp_flutter/class/constants.dart' as Constants;
 
