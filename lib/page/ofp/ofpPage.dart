@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:ofp_flutter/page/ofp/enrouteTab.dart';
+import 'package:ofp_flutter/class/apiService.dart';
+import 'package:ofp_flutter/page/ofp/enroute/enrouteTab.dart';
 import 'package:ofp_flutter/page/ofp/fuelOrderTab.dart';
 import 'package:ofp_flutter/page/ofp/infoTab.dart';
 import 'package:ofp_flutter/page/ofp/notamTab.dart';
 import 'package:ofp_flutter/page/ofp/postFlight.dart';
 import 'package:ofp_flutter/page/ofp/preflightTab.dart';
 import 'package:ofp_flutter/widget/customAppBar.dart';
-import 'package:ofp_flutter/class/constants.dart' as Constants;
+import 'package:ofp_flutter/class/global.dart' as Global;
 
 class OFPPage extends StatefulWidget {
   static const routeName = '/ofppage';
@@ -24,6 +25,12 @@ class _OFPPageState extends State<OFPPage> with SingleTickerProviderStateMixin {
   void initState() {
     super.initState();
     _tabController = TabController(length: 6, vsync: this);
+    loadOFP();
+  }
+
+  loadOFP() async {
+    Global.currentPackage = await APIService.getOFP();
+    print(Global.currentPackage.flightNumber);
   }
 
   @override
@@ -35,6 +42,7 @@ class _OFPPageState extends State<OFPPage> with SingleTickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
         backgroundColor: Colors.black,
         body: SafeArea(
           child: Container(

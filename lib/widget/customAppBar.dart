@@ -5,7 +5,8 @@ class CustomAppBar extends StatelessWidget {
   final bool backButtonEnabled;
   final String header;
   final List<Widget> rightWidget;
-  const CustomAppBar({Key key, @required this.backButtonEnabled, @required this.header, this.rightWidget})
+  final Function prePopFunction;
+  const CustomAppBar({Key key, @required this.backButtonEnabled, @required this.header, this.rightWidget, this.prePopFunction})
       : super(key: key);
 
   @override
@@ -34,6 +35,7 @@ class CustomAppBar extends StatelessWidget {
             children: [
               (backButtonEnabled)
                   ? IconButton(icon: Icon(Icons.navigate_before), onPressed: () {
+                    if (prePopFunction != null) prePopFunction();
                     Navigator.of(context).pop();
                   })
                   : SizedBox.shrink(),
