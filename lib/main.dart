@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:ofp_flutter/model/ofp.dart';
 import 'package:ofp_flutter/page/download/downloadPage.dart';
 import 'package:ofp_flutter/page/main/mainPage.dart';
+import 'package:ofp_flutter/page/ofp/enroute/enrouteInput.dart';
 import 'package:ofp_flutter/page/ofp/ofpPage.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:ofp_flutter/class/constants.dart' as Constants;
@@ -17,7 +19,6 @@ void main() {
 class MainApp extends StatelessWidget {
   // This widget is the root of your application.
   final Widget home;
-  
 
   MainApp({Key key, this.home});
 
@@ -49,7 +50,15 @@ class MainApp extends StatelessWidget {
                 type: PageTransitionType.rightToLeft,
                 duration: Constants.PAGE_TRANSITION_DURATION,
                 reverseDuration: Constants.PAGE_TRANSITION_DURATION);
-
+            break;
+          case EnrouteInputPage.routeName:
+            Waypoint wpt = settings.arguments;
+            return PageTransition(
+                child: EnrouteInputPage(waypoint: wpt),
+                type: PageTransitionType.rightToLeft,
+                duration: Constants.PAGE_TRANSITION_DURATION,
+                reverseDuration: Constants.PAGE_TRANSITION_DURATION);
+            break;
           default:
             return PageTransition(
                 child: MainPage(),
